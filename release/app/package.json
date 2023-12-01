@@ -1,0 +1,18 @@
+{
+    "name": "triza-rbxdiscordrpc",
+    "version": "0.1.0",
+    "description": "A Discord RPC Client used for displaying the user's current activity in Roblox Studio.",
+    "license": "MIT",
+    "author": {
+      "name": "T:Riza Corporation",
+      "email": "jimmehrblx@gmail.com",
+      "url": "https://github.com/TrizaCorporation"
+    },
+    "main": "./dist/main/main.js",
+    "scripts": {
+      "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
+      "postinstall": "npm run rebuild && npm run link-modules",
+      "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+    },
+    "dependencies": {}
+  }
