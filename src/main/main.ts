@@ -14,6 +14,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import AutoUpdater from './autoUpdater';
 
 class AppUpdater {
   constructor() {
@@ -87,6 +88,9 @@ const createWindow = async () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
+
+    new AutoUpdater()
+
     if (process.env.START_MINIMIZED) {
       mainWindow.minimize();
     } else {
